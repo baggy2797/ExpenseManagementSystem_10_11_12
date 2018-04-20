@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US" manifest="expenses.appcache">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>EMS</title>
+
+	<link rel="stylesheet" href="assets/expenses.css">
+
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0">
+
+	<link rel="shortcut icon" href="assets/favicon.jpeg">
+
+	<link rel="apple-touch-icon-precomposed" href="assets/icon-152.png">
+
+</head>
+
+<body data-screen="intro">
+
+	<div id="intro-screen" class="screen">
+  		<main><p>Loading <b>Expenses</b>…</p></main>
+	</div>
+
+	<center><img src="assets/favicon.jpeg" width="50" height="50"></center>
+
+
+
+	<h1> EXPENSE MANAGEMENT SYSTEM </h1>
+
+	<hr>
+
+	<nav>
+		<a href="expenses.html">HOME</a> |
+		<a href="calculator.html">CALCULATORS</a> |
+		<a href="index.html">BUDGET</a> |
+	</nav>
+
+	<hr>
+
+	<div id="main-screen" class="screen">
+  		<header><h1>Expenses<span id="total"></span></h1></header>
+  	<main><ul></ul></main>
+  <footer>
+    <button id="add-category">Add</button>
+    <button id="edit-categories">Edit</button>
+    <button id="clear-expenses">Clear</button>
+  </footer>
+</div>
+
+<form id="add-expense-screen" class="screen">
+  <header><button type="button" class="back">◀</button><h1>-</h1><button type="submit">Add</button></header>
+  <main>
+    <div><span id="add-expense-current">0.00</span> + <input type="number" id="add-expense-amount" step="0.01"></div>
+    <div><input id="add-expense-description" placeholder="Optional description"></div>
+    <p id="add-expense-history"></p>
+  </main>
+</form>
+
+<form id="edit-categories-screen" class="screen">
+  <header><button type="button" class="back">◀</button><h1>Edit categories</h1><button type="submit">Done</button></header>
+  <main><ul></ul></main>
+</form>
+
+<script src="assets/data.js"></script>
+<script src="assets/expenses.js"></script>
+<script type="text/javascript">
+
+<script>
+
+var oilCanvas = document.getElementById("oilChart");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+
+var oilData = {
+    labels: [
+        "Saudi Arabia",
+        "Russia",
+        "Iraq",
+        "United Arab Emirates",
+        "Canada"
+    ],
+    datasets: [
+        {
+            data: [133.3, 86.2, 52.2, 51.2, 50.2],
+            backgroundColor: [
+                "#FF6384",
+                "#63FF84",
+                "#84FF63",
+                "#8463FF",
+                "#6384FF"
+            ],
+            borderColor: "black",
+            borderWidth: 2
+        }]
+};
+
+var chartOptions = {
+  rotation: -Math.PI,
+  cutoutPercentage: 30,
+  circumference: Math.PI,
+  legend: {
+    position: 'left'
+  },
+  animation: {
+    animateRotate: false,
+    animateScale: true
+  }
+};
+
+var pieChart = new Chart(oilCanvas, {
+  type: 'doughnut',
+  data: oilData,
+  options: chartOptions
+});
+
+</script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+
+</html>

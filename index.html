@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+ 	<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css"> 	 
+    
+    <link rel="shortcut icon" href="assets/favicon.jpeg">
+    
+    <link type="text/css" rel="stylesheet" href="style.css">
+    
+    <title>Budget</title>
+  
+  </head>
+  
+  <body>
+
+
+  <center><img src="assets/favicon.jpeg" width="50" height="50">
+
+  <h1> EXPENSE MANAGEMENT SYSTEM </h1>
+
+  </center>
+
+  <hr>
+
+  <nav>
+    <a href="expenses.html">HOME</a> |
+    <a href="calculator.html">CALCULATORS</a> |
+    <a href="index.html">BUDGET</a> |
+  </nav>
+
+  <hr>
+
+
+
+    <div class="top">
+      <div class="budget">
+        <div class="budget_title">
+            Budget for <span class="budget_title-month">(enter month here!)</span>:
+        </div>
+
+        <div class="budget_value">0</div>
+
+        <div class="budget_income clearfix">
+          <div class="budget_income-text"><strong>Income</strong></div>
+          <div class="right">
+            <div class="budget_income-value">0</div>
+            <div class="budget_income-percentage">&nbsp;</div>
+          </div>
+        </div>
+
+        <div class="budget_expenses clearfix">
+          <div class="budget_expenses-text"><strong>Expenses</strong></div>
+          <div class="right clearfix">
+            <div class="budget_expenses-value">0</div>
+            <div class="budget_expenses-percentage">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="bottom">
+      <div class="add">
+        <div class="add_container">
+          <select class="add_type">
+            <option value="inc" selected>+</option>
+            <option value="exp">-</option>
+          </select>
+          <input type="text" class="add_description" placeholder="Add description">
+          <input type="number" class="add_value" placeholder="Value">
+          <button class="add_btn"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
+      <div class="container clearfix">
+        <div class="income">
+          <h2 class="income_title">Income</h2>
+          <div class="income_list">
+          </div>
+        </div>
+
+
+        <div class="expenses">
+          <h2 class="expenses_title">Expenses</h2>
+          <div class="expenses_list">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
